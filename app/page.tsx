@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ArrowUpRight, Check, HeartHandshake, ShieldCheck, Star, UserRound } from "lucide-react";
+import { ArrowUpRight, Check, HeartHandshake, ShieldCheck, Star, UserRound, UsersRound } from "lucide-react";
 import { BeforeAfterSlider } from "./before-after-slider";
 import { RevealObserver } from "./reveal";
 
@@ -91,6 +91,11 @@ const aboutPillars = [
     icon: UserRound,
     title: "Atención 1 a 1",
     text: "La Dra. Denisse te acompaña de principio a fin. Sin rotación de pasantes desconocidos: una misma persona, un mismo criterio.",
+  },
+  {
+    icon: UsersRound,
+    title: "Red de especialistas",
+    text: "Si tu tratamiento lo requiere, colaboramos de forma coordinada con especialistas certificados de diversas áreas para garantizarte una atención integral y del más alto nivel.",
   },
 ];
 
