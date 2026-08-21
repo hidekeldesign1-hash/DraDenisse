@@ -1,0 +1,21 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    target-branch: main
+    labels:
+      - dependencies
+    # Manual review required — Dependabot does not auto-merge.
+    # Major bumps should be reviewed carefully before merging.
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    target-branch: main
+    labels:
+      - dependencies

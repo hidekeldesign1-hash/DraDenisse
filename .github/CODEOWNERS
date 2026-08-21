@@ -1,0 +1,10 @@
+# CODEOWNERS only enforces reviews when branch protection / rulesets
+# require "Require review from Code Owners".
+
+* @hidekeldesign1-hash
+/.github/ @hidekeldesign1-hash
+/package.json @hidekeldesign1-hash
+/package-lock.json @hidekeldesign1-hash
+/next.config.* @hidekeldesign1-hash
+/.env.example @hidekeldesign1-hash
+/scripts/ @hidekeldesign1-hash

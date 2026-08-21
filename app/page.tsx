@@ -2,14 +2,15 @@ import Image from "next/image";
 import { ArrowUpRight, Check, HeartHandshake, ShieldCheck, Star, UserRound, UsersRound } from "lucide-react";
 import { BeforeAfterSlider } from "./before-after-slider";
 import { RevealObserver } from "./reveal";
+import { getSiteUrl, mapsPlaceUrl } from "../lib/site";
 
 const whatsappNumber = "525547211684";
 const whatsappHref =
   `https://wa.me/${whatsappNumber}?text=Hola%20Dra.%20Denisse%2C%20vi%20su%20p%C3%A1gina%20y%20quisiera%20agendar%20una%20valoraci%C3%B3n.`;
 const whatsappOpenHref = `https://wa.me/${whatsappNumber}`;
 
-const mapsPlaceHref = "https://maps.app.goo.gl/q7Roq5tQ1cKStUnt8";
-const mapsDirectionsHref = "https://maps.app.goo.gl/q7Roq5tQ1cKStUnt8";
+const mapsPlaceHref = mapsPlaceUrl;
+const mapsDirectionsHref = mapsPlaceUrl;
 const mapsEmbedSrc =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5786.237004325197!2d-99.15861450750748!3d19.309506473263728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce010038348d33%3A0xbb9d3e3b9a0f1428!2sDentista%20Dra.%20Denisse!5e0!3m2!1ses!2smx!4v1787333765273!5m2!1ses!2smx";
 
@@ -139,7 +140,7 @@ export default function Home() {
             <a href="#ubicacion">Ubicación</a>
           </div>
         </details>
-        <a className="button button-small" href={whatsappHref} target="_blank" rel="noreferrer">
+        <a className="button button-small" href={whatsappHref} target="_blank" rel="noopener noreferrer">
           Agendar cita <ArrowUpRight size={16} strokeWidth={1.8} aria-hidden="true" />
         </a>
       </header>
@@ -153,7 +154,7 @@ export default function Home() {
             resuelve tus dudas y recibe el cuidado que necesitas con claridad y confianza.
           </p>
           <div className="hero-actions">
-            <a className="button" href={whatsappHref} target="_blank" rel="noreferrer">
+            <a className="button" href={whatsappHref} target="_blank" rel="noopener noreferrer">
               Agendar una cita <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" />
             </a>
             <a className="text-link" href="#tratamientos">Conocer tratamientos <span>↓</span></a>
@@ -226,7 +227,7 @@ export default function Home() {
           <div><p className="section-kicker">Tratamientos</p><h2>Tu sonrisa merece atención profesional.</h2></div>
           <div>
             <p>Comienza por aquello que necesitas hoy. Si aún no lo sabes, una valoración es el mejor primer paso.</p>
-            <a className="text-link" href={tratamientoWhatsAppHref("Valoración dental")} target="_blank" rel="noreferrer">
+            <a className="text-link" href={tratamientoWhatsAppHref("Valoración dental")} target="_blank" rel="noopener noreferrer">
               Agendar valoración <ArrowUpRight size={16} strokeWidth={1.8} aria-hidden="true" />
             </a>
           </div>
@@ -241,7 +242,7 @@ export default function Home() {
                 data-reveal
                 href={tratamientoWhatsAppHref(tratamiento.nombre)}
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label={`Consultar por WhatsApp: ${tratamiento.nombre}`}
                 className={[
                   "treatment-card group grid grid-cols-[45px_1fr_auto] items-center gap-4 border-b border-stone-300/60 py-6 md:grid-cols-[0.5fr_1.2fr_1.7fr_auto] md:gap-8 md:py-8",
@@ -260,7 +261,7 @@ export default function Home() {
         </div>
         <div className="treatment-footer" data-reveal>
           <p className="scope-note">Durante tu valoración se confirmará el tratamiento indicado para tu caso.</p>
-          <a className="treatment-more" href={whatsappOpenHref} target="_blank" rel="noreferrer">
+          <a className="treatment-more" href={whatsappOpenHref} target="_blank" rel="noopener noreferrer">
             ¿Buscas algo más? <ArrowUpRight size={16} strokeWidth={1.8} aria-hidden="true" />
           </a>
         </div>
@@ -284,7 +285,7 @@ export default function Home() {
           ))}
         </div>
         <p className="results-cta" data-reveal>
-          <a href={tratamientoWhatsAppHref("Valoración dental")} target="_blank" rel="noreferrer">
+          <a href={tratamientoWhatsAppHref("Valoración dental")} target="_blank" rel="noopener noreferrer">
             ¿Te gustaría ver resultados similares en tu caso? Agenda una valoración.
             <ArrowUpRight size={16} strokeWidth={1.8} aria-hidden="true" />
           </a>
@@ -295,7 +296,7 @@ export default function Home() {
         <div className="process-intro" data-reveal>
           <p className="section-kicker">Tu primera consulta</p>
           <h2 id="process-title">Primero entendemos tu caso. Después hablamos del tratamiento.</h2>
-          <a className="button light-button" href={whatsappHref} target="_blank" rel="noreferrer">Agendar mi cita <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" /></a>
+          <a className="button light-button" href={whatsappHref} target="_blank" rel="noopener noreferrer">Agendar mi cita <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" /></a>
         </div>
         <ol className="steps">
           <li data-reveal><span>01</span><div><h3>Valoración</h3><p>Revisamos tu salud dental y escuchamos qué te preocupa.</p></div></li>
@@ -319,7 +320,7 @@ export default function Home() {
             </figure>
           ))}
         </div>
-        <a className="button outline-button" href={mapsPlaceHref} target="_blank" rel="noreferrer">Ver más reseñas en Google <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" /></a>
+        <a className="button outline-button" href={mapsPlaceHref} target="_blank" rel="noopener noreferrer">Ver más reseñas en Google <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" /></a>
       </section>
 
       <section className="about section-shell" id="sobre-mi">
@@ -376,7 +377,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
-          <a className="button" href={aboutConsultaHref} target="_blank" rel="noreferrer">
+          <a className="button" href={aboutConsultaHref} target="_blank" rel="noopener noreferrer">
             Agenda una consulta <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" />
           </a>
         </div>
@@ -410,39 +411,58 @@ export default function Home() {
           <address>Av. Sta. Úrsula 233<br />Pedregal de Sta. Úrsula<br />Coyoacán, 04600<br />Ciudad de México, CDMX</address>
           <a className="phone-link" href="tel:+525547211684">55 4721 1684</a>
           <div className="location-actions">
-            <a className="button" href={mapsDirectionsHref} target="_blank" rel="noreferrer">Cómo llegar <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" /></a>
-            <a className="text-link" href={whatsappHref} target="_blank" rel="noreferrer">Agendar cita <ArrowUpRight size={16} strokeWidth={1.8} aria-hidden="true" /></a>
+            <a className="button" href={mapsDirectionsHref} target="_blank" rel="noopener noreferrer">Cómo llegar <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" /></a>
+            <a className="text-link" href={whatsappHref} target="_blank" rel="noopener noreferrer">Agendar cita <ArrowUpRight size={16} strokeWidth={1.8} aria-hidden="true" /></a>
           </div>
         </div>
       </section>
 
       <section className="final-cta" data-reveal>
         <div><p className="section-kicker">Tu primera cita</p><h2>Tu sonrisa, en buenas manos.</h2></div>
-        <div><p>Atención profesional, explicaciones claras y un trato que te haga sentir tranquilo desde tu primera consulta.</p><a className="button light-button" href={whatsappHref} target="_blank" rel="noreferrer">Agendar mi cita <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" /></a></div>
+        <div><p>Atención profesional, explicaciones claras y un trato que te haga sentir tranquilo desde tu primera consulta.</p><a className="button light-button" href={whatsappHref} target="_blank" rel="noopener noreferrer">Agendar mi cita <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" /></a></div>
         <p className="final-proof"><GoogleStars /> Pacientes que recomiendan su experiencia</p>
       </section>
 
       <footer>
         <div className="footer-brand"><span className="brand-mark">D</span><p><strong>Dra. Denisse</strong><small>Consultorio dental</small></p></div>
         <div><small>Visítanos</small><p>Av. Sta. Úrsula 233<br />Pedregal de Sta. Úrsula<br />Coyoacán, CDMX</p></div>
-        <div><small>Contacto</small><p><a href="tel:+525547211684">55 4721 1684</a><br /><a href={whatsappHref} target="_blank" rel="noreferrer">WhatsApp</a><br /><a href={mapsPlaceHref} target="_blank" rel="noreferrer">Google Maps</a></p></div>
+        <div><small>Contacto</small><p><a href="tel:+525547211684">55 4721 1684</a><br /><a href={whatsappHref} target="_blank" rel="noopener noreferrer">WhatsApp</a><br /><a href={mapsPlaceHref} target="_blank" rel="noopener noreferrer">Google Maps</a></p></div>
         <div><small>Horarios</small><p>Consulta disponibilidad<br />directamente por WhatsApp.</p></div>
         <p className="footer-bottom">© 2026 Dra. Denisse <span id="privacidad">Tu información de contacto se utiliza únicamente para responder tu solicitud de cita.</span></p>
       </footer>
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Dentist",
-          name: "Dra. Denisse",
-          telephone: "+52 55 4721 1684",
-          address: { "@type": "PostalAddress", streetAddress: "Av. Sta. Úrsula 233", addressLocality: "Coyoacán", addressRegion: "Ciudad de México", postalCode: "04600", addressCountry: "MX" },
-          geo: { "@type": "GeoCoordinates", latitude: 19.3093995, longitude: -99.1554684 },
-        }) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Dentist",
+            "@id": `${getSiteUrl()}/#dentist`,
+            name: "Dra. Denisse",
+            description:
+              "Consultorio dental en Coyoacán con atención profesional, cercana y explicaciones claras.",
+            url: getSiteUrl(),
+            telephone: "+52 55 4721 1684",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Av. Sta. Úrsula 233",
+              addressLocality: "Coyoacán",
+              addressRegion: "Ciudad de México",
+              postalCode: "04600",
+              addressCountry: "MX",
+            },
+            geo: {
+              "@type": "GeoCoordinates",
+              latitude: 19.3093995,
+              longitude: -99.1554684,
+            },
+            areaServed: ["Coyoacán", "Ciudad de México"],
+            hasMap: mapsPlaceUrl,
+          }).replace(/</g, "\u003c"),
+        }}
       />
 
-      <a className="mobile-cta" href={whatsappHref} target="_blank" rel="noreferrer">Agendar cita <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" /></a>
+      <a className="mobile-cta" href={whatsappHref} target="_blank" rel="noopener noreferrer">Agendar cita <ArrowUpRight size={18} strokeWidth={1.8} aria-hidden="true" /></a>
     </main>
   );
 }

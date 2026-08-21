@@ -10,6 +10,7 @@
 
 # testing
 /coverage
+.nyc_output
 
 # next.js
 /.next/
@@ -21,20 +22,61 @@
 
 # misc
 .DS_Store
-*.pem
+Thumbs.db
 .wrangler
 .openai
 .sites-runtime
 
-# debug
+# debug / logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files
+# Variables de entorno
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+.env*.local
 .env*
 !.env.example
+
+# Vercel
+.vercel
+
+# Credenciales y certificados
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.jks
+*.keystore
+
+# Bases de datos locales
+*.db
+*.sqlite
+*.sqlite3
+
+# Backups
+*.bak
+*.backup
+*.old
+*.orig
+
+# Editores
+.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
 
 # typescript
 next-env.d.ts
